@@ -1,0 +1,161 @@
+<!-- Navbar -->
+<mat-toolbar color="primary" class="navbar">
+  <span class="logo">📚 مكتبة روايات</span>
+  <span class="spacer"></span>
+  <button mat-button>الرئيسية</button>
+  <button mat-button>الروايات</button>
+  <button mat-button>تسجيل الدخول</button>
+</mat-toolbar>
+
+<!-- Hero Section -->
+<!-- <div class="hero-section">
+  <div class="hero-content">
+    <h1>مرحبًا بك في مكتبتنا الإلكترونية</h1>
+    <p>اقرأ واستمع لأفضل الروايات من المؤلفين العرب</p>
+    <button mat-raised-button color="accent">ابدأ التصفح</button>
+  </div>
+</div> -->
+
+<section class="hero-section">
+  <div class="container text-center">
+    <h1>مرحبًا بك في مكتبتنا الإلكترونية</h1>
+    <p>اقرأ واستمع لأفضل الروايات من المؤلفين العرب</p>
+    <div class="search-box">
+      <input type="text" placeholder="ابحث عن كتاب أو مؤلف أو قسم كتاب" />
+      <button><i class="fas fa-search">بحث</i></button>
+    </div>
+
+    <button class="publish-btn">انشر كتابك</button>
+  </div>
+</section>
+
+
+
+<!-- Section Title -->
+<h2 class="section-title">الروايات الأكثر شعبية</h2>
+
+<!-- Books Grid -->
+<div class="book-grid">
+  <mat-card class="book-card" *ngFor="let book of popularBooks" (click)="goToDetails(book)">
+    <img mat-card-image [src]="book.image" alt="{{ book.title }}">
+    <mat-card-content>
+      <h3>{{ book.title }}</h3>
+      <p>بواسطة {{ book.author }}</p>
+      <div class="stars">
+        <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+          <mat-icon color="warn">
+            {{ book.rating >= star ? 'star' : (book.rating >= star - 0.5 ? 'star_half' : 'star_border') }}
+          </mat-icon>
+        </ng-container>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<section class="about-section" >
+  <div class="about-container">
+    <div class="about-text">
+      <h2>من نحن</h2>
+      <p>
+        نحن منصة تهدف إلى إحياء الأدب العربي من خلال تقديم روايات وقصص بصيغة نصية وصوتية، مع بيئة تفاعلية بين الكتّاب والقرّاء.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="https://i.pinimg.com/736x/51/8d/d2/518dd26afe3c1a8c3a7f51bdc418a41a.jpg" alt="من نحن">
+    </div>
+  </div>
+</section>
+
+
+<section class="idea-section" >
+  <div class="idea-container">
+    <div class="idea-text">
+      <h2>فكرة الموقع</h2>
+      <p>
+        نوفر منصة للكتاب العرب لنشر أعمالهم بكل حرية، ونمنح القراء تجربة فريدة بالاستماع أو القراءة مع تقييمات ومشاركة الروايات.
+      </p>
+    </div>
+    <div class="idea-image">
+      <img src="https://i.pinimg.com/736x/2e/e4/47/2ee4477d145dfa59b6dce188bf00d746.jpg" alt="فكرة الموقع">
+    </div>
+  </div>
+</section>
+
+
+<section class="features-section">
+  <h2 class="text-center">مميزات الموقع</h2>
+  <div class="features-list">
+    <div class="feature-item">
+      <img src="assets/icons/book.svg" alt="مكتبة">
+      <p>مكتبة ضخمة من الروايات</p>
+    </div>
+    <div class="feature-item">
+      <img src="assets/icons/audio.svg" alt="استماع">
+      <p>إمكانية الاستماع للروايات</p>
+    </div>
+    <div class="feature-item">
+      <img src="assets/icons/writer.svg" alt="كاتب">
+      <p>قناة خاصة لكل كاتب</p>
+    </div>
+    <div class="feature-item">
+      <img src="assets/icons/star.svg" alt="تقييم">
+      <p>نظام تقييم وتوصيات ذكي</p>
+    </div>
+  </div>
+</section>
+
+
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>مكتبة الروايات</h2>
+      <p>منصة تفاعلية للاستماع وقراءة الروايات العربية</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>روابط سريعة</h3>
+      <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#">الروايات</a></li>
+        <li><a href="#">من نحن</a></li>
+        <li><a href="#">تسجيل الدخول</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>تواصل معنا</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-xl"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-xl"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-xl"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 جميع الحقوق محفوظة - مكتبة الروايات</p>
+  </div>
+</footer>
+
+
+
+<!-- <div class="container mt-4">
+  <h1 class="text-center mb-4">أحدث الروايات</h1>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let book of books">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{ book.title }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="book.coverImage" alt="رواية">
+        <mat-card-content>
+          <p>{{ book.summary }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button [routerLink]="['/book', book.id]">قراءة المزيد</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div> -->

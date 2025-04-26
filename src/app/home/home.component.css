@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Hero Section */
+/* .hero-section {
+  background-image: url('https://i.ebayimg.com/images/g/6o8AAOSwMYpg3osu/s-l1200.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+} */
+
+.hero-section {
+  /* background-image: url('https://i.ebayimg.com/images/g/6o8AAOSwMYpg3osu/s-l1200.jpg'); */
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ebayimg.com/images/g/6o8AAOSwMYpg3osu/s-l1200.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  /* background: linear-gradient(to left, #f857a6, #ff5858); */
+  color: white;
+  /* padding: 80px 20px; */
+  border-radius: 0 0 30px 30px;
+  direction: rtl;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 4.5rem;
+  margin-bottom: 60px;
+  font-weight: bold;
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+}
+.hero-section p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  /* font-weight: bold; */
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.search-box {
+  background: #f1f1f1;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.search-box input:focus {
+  outline: none;
+}
+
+.search-box button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 19px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: white;
+  color: black;
+}
+
+.publish-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.publish-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+
+/* الروايات الاكثر شعبيه  */
+
+.section-title {
+  font-size: 38px;
+  margin: 80px 60px 50px;
+  /* text-align: center; */
+  color: #141415;
+  font-family: "Rakkas", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 50px 40px;
+}
+
+.book-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  border-radius: 16px;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-card img {
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.book-card h3 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.stars mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/* من نحن وفكرة المشؤوع */
+section {
+  direction: rtl;
+  padding: 60px 20px;
+}
+
+.about-container, .idea-container , .features-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+}
+
+.about-text, .idea-text {
+  flex: 1;
+  text-align: right;
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.about-text h2, .idea-text h2, .features-section h2 {
+  font-size: 38px;
+  margin: 80px 10px 50px;
+  /* text-align: center; */
+  color: #141415;
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.about-text p, .idea-text p {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.8;
+  padding: 5px 50px;
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.about-image img, .idea-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50px;
+}
+
+.features-section {
+  /* background: linear-gradient(to left, #e0f7fa, #ffffff);
+  text-align: center; */
+  margin-bottom: 35px;
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.feature-item {
+  width: 200px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-item img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* footer */
+
+.main-footer {
+  background-color: #444;
+  color: white;
+  padding: 50px 20px 20px;
+  direction: rtl;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-brand h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 16px;
+  color: #d1eaff;
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #e0f7fa;
+}
+
+.social-icons a {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.social-icons a {
+  margin-left: 15px;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ffd700; /* لون ذهبي عند التحويل */
+}
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #bbdefb;
+  border-top: 1px solid #ffffff44;
+  padding-top: 15px;
+}

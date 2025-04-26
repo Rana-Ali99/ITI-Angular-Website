@@ -1,0 +1,27 @@
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  flex-wrap: wrap;
+  background-color: #fefefe;
+}
+
+.left-section {
+  flex: 1;
+  text-align: center;
+}
+
+.book-image {
+  width: 250px;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.buttons button {
+  margin: 0.5rem;
+}
+
+.right-section {
+  flex: 2;
+  padding: 1rem;
+}
