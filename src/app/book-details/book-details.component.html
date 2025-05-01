@@ -1,0 +1,21 @@
+<div class="details-container" dir="rtl">
+  <div class="right-section">
+    <h2>{{ book?.title }}</h2>
+    <p><strong>الكاتب:</strong> {{ book?.author }}</p>
+    <p><strong>التصنيف:</strong> {{ book?.category }}</p>
+    <p><strong>التقييم:</strong> ⭐ {{ book?.rating }} / 5</p>
+    <p><strong>نبذة:</strong> {{ book?.summary }}</p>
+    <p><strong>الملخص:</strong> {{ book?.description }}</p>
+    <button mat-stroked-button color="primary">⭐ أضف تقييم</button>
+  </div>
+
+  <div class="left-section">
+    <img [src]="book?.imageUrl" alt="غلاف الرواية" class="book-image" />
+    <div class="buttons">
+      <button mat-raised-button color="primary">📖 اقرأ الرواية</button>
+      <button mat-raised-button color="accent">🎧 استمع للرواية</button>
+      <button mat-raised-button color="warn">🔗 مشاركة</button>
+    </div>
+  </div>
+
+</div>

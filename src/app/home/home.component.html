@@ -1,0 +1,211 @@
+<!-- Navbar -->
+<!-- <mat-toolbar color="primary" class="navbar">
+  <span class="logo">نادى القراء</span>
+  <span class="spacer"></span>
+  <button mat-button>الرئيسية</button>
+  <button mat-button>الروايات</button>
+  <button mat-button>تسجيل الدخول</button>
+</mat-toolbar> -->
+
+<mat-toolbar class="navbar" color="transparent" dir="rtl" [class.scrolled]="isScrolled">
+  <span class="logo">نادى القراء</span>
+  <span class="spacer"></span>
+  <div class="nav-links">
+    <button mat-button>الرئيسية</button>
+    <button mat-button>الروايات</button>
+    <button mat-button>تسجيل الدخول</button>
+  </div>
+</mat-toolbar>
+
+
+
+<section class="hero-section">
+  <div class="container text-center">
+    <h1>مرحبًا بك في مكتبتنا الإلكترونية</h1>
+    <p>اقرأ واستمع لأفضل الروايات من المؤلفين العرب</p>
+    <div class="search-box">
+      <input type="text" placeholder="ابحث عن كتاب أو مؤلف أو قسم كتاب" />
+      <button><i class="fas fa-search">بحث</i></button>
+    </div>
+
+    <button class="publish-btn">انشر كتابك</button>
+  </div>
+</section>
+
+
+
+<!-- Section Title
+<h2 class="section-title">الروايات الأكثر شعبية</h2>
+
+Books Grid
+<div class="book-grid">
+  <mat-card class="book-card" *ngFor="let book of popularBooks" (click)="goToDetails(book.id)">
+    <img mat-card-image [src]="book.image" alt="{{ book.title }}">
+    <mat-card-content>
+      <h3>{{ book.title }}</h3>
+      <p>بواسطة {{ book.author }}</p>
+      <div class="stars">
+        <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+          <mat-icon color="warn">
+            {{ book.rating >= star ? 'star' : (book.rating >= star - 0.5 ? 'star_half' : 'star_border') }}
+          </mat-icon>
+        </ng-container>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+<!-- <h2 class="section-title">الروايات الأكثر شعبية</h2>
+
+<div class="book-grid">
+  <mat-card class="book-card" *ngFor="let book of popularBooks" (click)="goToDetails(book.id)">
+    <img mat-card-image [src]="'https://localhost:44303/Images/' + book.cover" alt="{{ book.title }}">
+    <mat-card-content>
+      <h3>{{ book.title }}</h3>
+      <p>التقييم: {{ book.averageRating }}</p>
+      <div class="stars">
+        <ng-container *ngFor="let star of [1,2,3,4,5]">
+          <mat-icon color="warn">
+            {{ book.averageRating >= star ? 'star' : (book.averageRating >= star - 0.5 ? 'star_half' : 'star_border') }}
+          </mat-icon>
+        </ng-container>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+<h2 class="section-title">الروايات الأكثر شعبية</h2>
+
+<div *ngIf="popularBooks.length > 0; else noBooks">
+  <div class="book-grid">
+    <mat-card class="book-card" *ngFor="let book of popularBooks" (click)="goToDetails(book.id)">
+      <img mat-card-image [src]="'http://readersclub.runasp.net/Uploads/Covers/' + book.cover" alt="{{ book.title }}">
+      <mat-card-content>
+        <h3>{{ book.title }}</h3>
+        <p class="channel">{{ book.channelName }}</p> <!-- ✅ اسم القناة -->
+        <p class="category">التصنيف: {{ book.categoryName }}</p>
+        <p>التقييم: {{ book.averageRating }}</p>
+        <div class="stars">
+          <ng-container *ngFor="let star of [1,2,3,4,5]">
+            <mat-icon color="warn">
+              {{ book.averageRating >= star ? 'star' : (book.averageRating >= star - 0.5 ? 'star_half' : 'star_border') }}
+            </mat-icon>
+          </ng-container>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<ng-template #noBooks>
+  <p>لا توجد روايات لعرضها في الوقت الحالي.</p>
+</ng-template>
+
+
+
+<!-- <section id="about" class="about-section">
+  <div class="about-card">
+    <div class="about-text">
+      <h2>من نحن</h2>
+      <p>
+        نحن منصة تهدف إلى تقديم أفضل الروايات والكتب بشكل عصري وحديث،
+        مع توفير تجربة قراءة واستماع ممتعة ومريحة للقراء والمؤلفين على حد سواء.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="https://i.pinimg.com/736x/d2/17/54/d21754023d8a27150e42397e8e1a2d75.jpg" alt="من نحن">
+    </div>
+  </div>
+</section> -->
+
+<section id="about" class="about-section">
+  <div class="about-card fade-in">
+    <div class="about-image fade-in-left">
+      <img src="https://maarof.com/wp-content/uploads/2021/03/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9.jpg" alt="من نحن">
+    </div>
+    <div class="about-text fade-in-right">
+      <h2><i class="fas fa-book-open" style="color:#A27B5C; margin-left: 10px;"></i> من نحن</h2>
+      <p>
+        نحن منصة تهدف إلى تقديم أفضل الروايات والكتب بشكل عصري وحديث، مع توفير تجربة قراءة واستماع ممتعة ومريحة للقراء والمؤلفين على حد سواء.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="idea-section">
+  <div class="idea-container">
+    <div class="idea-text">
+      <h2><i class="fa-solid fa-lightbulb"></i>فكرة الموقع</h2>
+      <p>
+        نوفر منصة للكتاب العرب لنشر أعمالهم بكل حرية، ونمنح القراء تجربة فريدة بالاستماع أو القراءة مع تقييمات ومشاركة
+        الروايات.
+      </p>
+    </div>
+    <div class="idea-image">
+      <img src="https://assets.misbar.com/form/2380b5dbb2a1f3bc3a0737166377cfc4dc2b8fd6.jpg" alt="فكرة الموقع">
+    </div>
+  </div>
+</section>
+
+
+<section class="features-section">
+  <div class="features-container">
+    <div class="features-card-box"> <!-- صندوق أبيض يضم العنوان والكروت -->
+      <h2 class="section-title">مميزات الموقع</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-book-open fa-3x"></i>
+          <h3>مكتبة ضخمة</h3>
+          <p>مجموعة متنوعة من الروايات العربية.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-headphones-alt fa-3x"></i>
+          <h3>استماع للروايات</h3>
+          <p>استمع إلى الروايات بجودة صوت ممتازة.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-pen-nib fa-3x"></i>
+          <h3>قناة لكل كاتب</h3>
+          <p>أنشئ قناتك الخاصة وانشر أعمالك بكل حرية.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-star fa-3x"></i>
+          <h3>نظام تقييم</h3>
+          <p>قيم الروايات واستفد من آراء القراء الآخرين.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="main-footer">
+  <div class="footer-content">
+    <div class="footer-about">
+      <h2>📚 نادى القراء</h2>
+      <p>استمتع بقراءة والاستماع لأروع الروايات العربية.</p>
+    </div>
+    <div class="footer-links">
+      <h3>روابط سريعة</h3>
+      <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#">الروايات</a></li>
+        <li><a href="#">من نحن</a></li>
+        <li><a href="#">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h3>تابعنا</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 جميع الحقوق محفوظة - مكتبة الروايات</p>
+  </div>
+</footer>
